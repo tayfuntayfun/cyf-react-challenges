@@ -5,12 +5,9 @@ import './App.css';
 
 function App() {
   const [scoreOrder, setScoreOrder] = useState("High");
-  function handleButtonClick (){
-    if ( scoreOrder == "High"){
-      setScoreOrder ("Low")
-    }else{
-      setScoreOrder ("High")
-    }
+  
+  const handleButtonClick = () => {
+    scoreOrder == "High" ? setScoreOrder ("Low") : setScoreOrder ("High")
   }
 
   return (
