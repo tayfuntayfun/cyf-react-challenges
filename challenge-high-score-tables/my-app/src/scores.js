@@ -5,7 +5,7 @@
     },     
     {
       name: "Scotland", 
-      scores: [   , {n: "Neill", s: 999999},{n: "groundkeeper willie", s: 4000}, {n: "braveheart", s: -200}]
+      scores: [  {n: "Neill", s: 999999},{n: "groundkeeper willie", s: 4000}, {n: "braveheart", s: -200}]
     },{
       name: "Brazil", 
       scores: [ {n: "Mozart", s: 999}]
