@@ -4,15 +4,19 @@ import allCountryScores from './scores';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [scoreOrder, setScoreOrder] = useState("High");
   function handleButtonClick (){
-    setCount (count + 1)
+    if ( scoreOrder == "High"){
+      setScoreOrder ("Low")
+    }else{
+      setScoreOrder ("High")
+    }
   }
 
   return (
     <div className="App">
       <h1>High Scores per Country</h1>
-        <button name="button" className="button" onClick={handleButtonClick}> {count}
+        <button name="button" className="button" onClick={handleButtonClick}> {scoreOrder}
       </button>
         {allCountryScores
           .sort((a, b) => a.name.localeCompare(b.name))
