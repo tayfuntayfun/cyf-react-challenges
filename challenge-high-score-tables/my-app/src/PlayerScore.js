@@ -3,12 +3,16 @@ import React from 'react';
 const PlayerScore = (props) => {
     return (
         <div className="scorer-info">
-            <span className="scorer-name"> 
-            {props.element.n.toUpperCase()}
-            </span>
-            <span className="scorer-score"> 
-            {props.element.s}
-            </span>
+            <div className="scorer-">
+                <span className="scorer-name-span"> 
+                {props.element.n.toUpperCase()}
+                </span>
+            </div>
+            <div>
+                <span className="scorer-score-span"> 
+                {props.element.s}
+                </span>
+            </div>
         </div>
     )
 }

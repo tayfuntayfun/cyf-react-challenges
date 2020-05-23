@@ -17,6 +17,15 @@ code {
   margin-top: 10px;
 }
 
+.scorer-info{
+  display: flex;
+  flex-direction: row;
+}
+
+.scorer-name-span{
+  margin: 10px;
+}
+
 .App{
   display: flex;
   flex-direction: column;
