@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import data from './babyNamesData.json';
+import ListBabyNames from './ListBabyNames';
 
-function App() {
-  
+const  App = () => {
+
+  const [names, setName] = useState('')
+  const [babyName, setBabyName] = useState ([])
+
+  const handleChange = e => {
+    setName((e.target.value).toLowerCase())
+  }
+
+  useEffect( () => {
+    setBabyName (data.filter( item => item.name.toLowerCase().includes(names)))
+  }, [names])
+
     return (
       <div className="App">
-        <div className='allBabyNames'>
-          {data
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((data)=> (
-            <p className={data.sex}>{data.name}</p>
-            )
-          )}
-        </div>
-        <div class="line"></div>
+        {<input className="search-input" label='Search Names' placeholder="Search names" onChange={handleChange}></input> }
+        <hr className="line"></hr>
+        <ListBabyNames babyNames = {babyName}/>
+        <hr className="line"></hr>
       </div>
     );
 }
